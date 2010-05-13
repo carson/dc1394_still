@@ -1,0 +1,7 @@
+still.c:
+A unit test to save a monochrome still from attached dc1394 cameras.
+The program will output one pgm for each camera, with the camera's guid
+as the image's filename. The program requires dc1394 Version 2.
+
+Makefile:
+A basic build script. If you prefer clang, change CC accordingly.
