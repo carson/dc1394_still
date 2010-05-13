@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
   // assumes your camera can output 640x480 with 8-bit monochrome
   video_mode = DC1394_VIDEO_MODE_640x480_MONO8;
 
-  d = dc1394_new ();
+  d = dc1394_new();
   if (!d)
     return 1;
   err=dc1394_camera_enumerate (d, &list);
@@ -101,7 +101,6 @@ int main(int argc, char *argv[])
 
   // setup cameras for capture
   for (i = 0; i < numCameras; i++) {
-
     err=dc1394_video_set_iso_speed(cameras[i], DC1394_ISO_SPEED_800);
     DC1394_ERR_CLN_RTN(err,cleanup(),"Could not set ISO speed");
     
@@ -134,8 +133,7 @@ int main(int argc, char *argv[])
       sprintf(filename, "%" PRIu64 "%s",list->ids[i].guid,IMAGE_FILE_EXTENSION);
       imagefile=fopen(filename, "w");
 
-      if( imagefile == NULL)
-	{
+      if( imagefile == NULL) {
 	  dc1394_log_error("Can't create %s", filename);
 	}
   
