@@ -43,7 +43,6 @@ int i, j;
 uint32_t numCameras = 0;
 int video_mode;
 uint32_t video_mode_width, video_mode_height;
-char *frame_buffer=NULL;
 
 // dc1394 variables
 dc1394camera_t *cameras[MAX_CAMERAS];
@@ -59,8 +58,6 @@ void cleanup(void) {
         dc1394_video_set_transmission(cameras[i], DC1394_OFF);
         dc1394_capture_stop(cameras[i]);
     }
-    if (frame_buffer != NULL)
-        free( frame_buffer );
 }
 
 int main(int argc, char *argv[]) 
